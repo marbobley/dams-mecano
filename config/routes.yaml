@@ -9,8 +9,3 @@
 
 controllers:
     resource: routing.controllers
-
-# Importer les fichiers YAML situés dans config/routes/
-app_extra_routes:
-    resource: 'routes/'
-    type: glob
