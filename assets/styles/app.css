@@ -1,3 +1,125 @@
+/* Thème sombre sobre avec contraste suffisant */
+:root {
+    --bg-body: #0f1115;
+    --bg-surface: #161a22;
+    --bg-surface-2: #1c2230;
+    --text-primary: #e6e6e6;
+    --text-secondary: #a8b0bd; /* contraste AA sur fond #161a22 */
+    --border-color: #2a2f3a;
+    --link: #8bb4ff;
+    --link-hover: #b2ceff;
+    --focus-ring: rgba(110, 168, 254, 0.45);
+}
+
+html, body {
+    height: 100%;
+}
+
 body {
-    background-color: skyblue;
+    background-color: var(--bg-body);
+    color: var(--text-primary);
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+/* Liens */
+a { color: var(--link); }
+a:hover, a:focus { color: var(--link-hover); }
+
+/* Accessibilité focus */
+*:focus-visible {
+    outline: 2px solid var(--link);
+    outline-offset: 2px;
+    box-shadow: 0 0 0 .25rem var(--focus-ring);
+}
+
+/* Surfaces Bootstrap fréquemment utilisées dans le site */
+.bg-light { background-color: var(--bg-surface) !important; }
+.bg-white { background-color: var(--bg-surface-2) !important; }
+.text-secondary { color: var(--text-secondary) !important; }
+
+/* Séparateurs et bordures */
+.border, .border-top, .border-bottom, .border-start, .border-end,
+.card, .card-header, .navbar, .form-control, .form-select {
+    border-color: var(--border-color) !important;
+}
+
+/* Navbar (le template utilise navbar-light bg-light) */
+.navbar-light { background-color: var(--bg-surface) !important; }
+.navbar-light .navbar-brand,
+.navbar-light .navbar-nav .nav-link,
+.navbar-light .navbar-text {
+    color: var(--text-primary) !important;
+}
+.navbar-light .navbar-nav .nav-link:hover,
+.navbar-light .navbar-nav .nav-link:focus {
+    color: var(--link) !important;
+}
+.navbar-light .navbar-toggler {
+    border-color: var(--border-color);
+}
+.navbar-light .navbar-toggler-icon {
+    filter: invert(85%);
+}
+
+/* Cartes */
+.card { background-color: var(--bg-surface-2); color: var(--text-primary); }
+.card-header { background-color: var(--bg-surface); color: var(--text-primary); }
+.card .text-secondary { color: var(--text-secondary) !important; }
+
+/* Badges (pour s'assurer d'un contraste lisible sur fond sombre générique) */
+.badge.text-bg-primary { background-color: #0d6efd !important; color: #fff !important; }
+.badge.text-bg-secondary { background-color: #49515c !important; color: #fff !important; }
+
+/* Sections spécifiques */
+#hero { background-color: var(--bg-surface-2) !important; }
+#services { background-color: var(--bg-surface) !important; }
+#pricing { background-color: var(--bg-surface) !important; }
+#testimonials { background-color: var(--bg-surface-2) !important; }
+/* #contact est déjà bg-dark/text-white via template Bootstrap */
+
+/* Formulaires */
+.form-label { color: var(--text-primary); }
+.form-control,
+.form-select,
+textarea,
+input[type="text"],
+input[type="tel"],
+input[type="email"] {
+    color: var(--text-primary);
+    background-color: #0f141d; /* légèrement plus clair que body pour différencier */
+    border-color: var(--border-color);
+}
+
+.form-control::placeholder { color: #7f8896; }
+.form-control:focus,
+.form-select:focus,
+textarea:focus,
+input:focus {
+    color: var(--text-primary);
+    background-color: #111723;
+    border-color: #4d6bfe;
+    box-shadow: 0 0 0 .25rem var(--focus-ring);
+}
+
+/* Boutons outline pour lisibilité sur fond sombre */
+.btn-outline-primary {
+    color: #9bbcff;
+    border-color: #4d6bfe;
+}
+.btn-outline-primary:hover,
+.btn-outline-primary:focus {
+    color: #fff;
+    background-color: #4d6bfe;
+    border-color: #4d6bfe;
+}
+
+/* Blockquote et citations */
+.blockquote { color: var(--text-primary); }
+.blockquote-footer { color: var(--text-secondary); }
+
+/* Carousel contrôles visibles sur sombre */
+.carousel-control-prev-icon,
+.carousel-control-next-icon {
+    filter: invert(90%);
 }
