@@ -1,0 +1,309 @@
+/*
+  Dam's service auto 34 – Thème mobile-first
+  Palette: noir (presque), bleu électrique, métal (gris acier)
+  Accessibilité: contrastes AA, focus visibles, tailles fluides
+*/
+
+:root {
+  --bg: #0a0f1a;            /* noir bleuté */
+  --bg-elev: #111827;       /* couche supérieure */
+  --text: #e5e7eb;          /* gris très clair */
+  --muted: #b6c2d1;         /* gris bleuté */
+  --primary: #1e90ff;       /* bleu */
+  --primary-strong: #0ea5e9;/* bleu clair plus saturé */
+  --metal: #6b778d;         /* métallique */
+  --metal-dark: #475569;    /* métallique foncé */
+  --ok: #22c55e;
+  --danger: #ef4444;
+  --shadow: 0 8px 24px rgba(0, 0, 0, 0.35);
+  --radius: 14px;
+  --gap: 1rem;
+  --maxw: 1100px;
+}
+
+/* Reset de base adapté accessibilité */
+* { box-sizing: border-box; }
+html { scroll-behavior: smooth; }
+body {
+  margin: 0;
+  font-family: system-ui, -apple-system, Segoe UI, Roboto, Ubuntu, Cantarell, Noto Sans, Arial, "Apple Color Emoji", "Segoe UI Emoji";
+  color: var(--text);
+  background: radial-gradient(1200px 600px at 70% -10%, rgba(30,144,255,.18), transparent 60%),
+              radial-gradient(900px 500px at 0% 100%, rgba(110,138,170,.15), transparent 60%),
+              var(--bg);
+  line-height: 1.6;
+}
+
+img, svg, video { max-width: 100%; height: auto; }
+
+/* Lien d’évitement */
+.skip-link {
+  position: absolute;
+  left: -9999px;
+  top: -9999px;
+}
+.skip-link:focus {
+  position: fixed;
+  left: 1rem;
+  top: 1rem;
+  background: var(--primary);
+  color: #001026;
+  padding: .6rem .9rem;
+  border-radius: .5rem;
+  outline: 3px solid #fff;
+  z-index: 1000;
+}
+
+/* En-tête */
+.site-header {
+  position: sticky;
+  top: 0;
+  z-index: 50;
+  background: linear-gradient(180deg, rgba(17,24,39,.95), rgba(17,24,39,.8));
+  backdrop-filter: saturate(1.2) blur(6px);
+  border-bottom: 1px solid rgba(255,255,255,.08);
+}
+.brand {
+  display: flex;
+  align-items: center;
+  gap: .8rem;
+  padding: .9rem 1rem .5rem;
+}
+.logo { font-size: 1.6rem; filter: drop-shadow(0 2px 6px rgba(30,144,255,.35)); }
+.brand-text { display: grid; }
+.site-title {
+  margin: 0;
+  font-size: 1.25rem;
+  letter-spacing: .3px;
+  text-transform: uppercase;
+}
+.site-tagline {
+  margin: 0;
+  font-size: .9rem;
+  color: var(--muted);
+}
+
+/* Toggle de navigation (mobile) */
+.nav-toggle { padding: 0 0 .6rem 0; border-bottom: 1px solid rgba(255,255,255,.08); }
+.menu-summary {
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  gap: .55rem;
+  margin: .2rem 1rem 0 1rem;
+  padding: .55rem .9rem;
+  color: var(--text);
+  background: linear-gradient(180deg, rgba(255,255,255,.06), rgba(255,255,255,.02));
+  border: 1px solid rgba(255,255,255,.12);
+  border-radius: 999px;
+}
+.menu-summary::before {
+  content: "≡";
+  font-weight: 700;
+  letter-spacing: 1px;
+}
+.menu-summary:focus-visible { outline: 3px solid var(--primary); outline-offset: 2px; }
+
+/* Cacher le menu quand replié sur mobile */
+.nav-toggle:not([open]) .site-nav { display: none; }
+
+.site-nav ul {
+  display: flex;
+  gap: .6rem;
+  list-style: none;
+  margin: 0;
+  padding: .4rem 1rem 1rem;
+  overflow-x: auto;
+}
+.site-nav a {
+  display: inline-block;
+  padding: .55rem .85rem;
+  color: var(--text);
+  text-decoration: none;
+  border: 1px solid rgba(255,255,255,.12);
+  border-radius: 999px;
+  background: linear-gradient(180deg, rgba(255,255,255,.05), rgba(255,255,255,.02));
+}
+.site-nav a:hover { border-color: rgba(255,255,255,.28); }
+.site-nav a:focus-visible { outline: 3px solid var(--primary); outline-offset: 2px; }
+
+/* Quand le menu est déplié sur mobile, afficher en colonne */
+.nav-toggle[open] .site-nav ul {
+  flex-direction: column;
+  overflow: visible;
+}
+.nav-toggle[open] .site-nav a {
+  display: block;
+  width: 100%;
+  text-align: left;
+}
+
+/* Fermer visuellement le menu après un clic sur un lien d'ancre
+   (aucun JS requis). Quand une section devient :target, on masque la nav
+   si le <details> est encore ouvert. Le bouton « Menu » reste disponible
+   pour rouvrir si besoin. */
+@media (max-width: 699px) {
+  body:has(:target) .nav-toggle[open] .site-nav { display: none; }
+  /* Si l'utilisateur garde le focus dans le <details> (ex: revient au bouton),
+     autoriser l'affichage pour réouverture immédiate au clavier */
+  body:has(:target) .nav-toggle[open]:focus-within .site-nav { display: block; }
+}
+
+/* Sections */
+.section {
+  padding: 2.5rem 1rem;
+}
+.section-dark {
+  background: linear-gradient(180deg, rgba(0,0,0,.2), rgba(255,255,255,.02));
+}
+.container {
+  max-width: var(--maxw);
+  margin-inline: auto;
+}
+.section h2 {
+  margin: 0 0 1rem 0;
+  font-size: clamp(1.3rem, 3.5vw, 2rem);
+}
+
+/* Hero */
+.hero {
+  background: radial-gradient(900px 300px at 100% 10%, rgba(14,165,233,.2), transparent 60%),
+              linear-gradient(180deg, rgba(255,255,255,.06), rgba(255,255,255,.02));
+  border-bottom: 1px solid rgba(255,255,255,.06);
+}
+.hero-inner {
+  max-width: var(--maxw);
+  margin: 0 auto;
+  padding: 2.2rem 1rem 2.4rem;
+}
+.hero h2 { font-size: clamp(1.5rem, 5vw, 2.4rem); margin-top: 0; }
+.hero p { color: var(--muted); }
+
+/* Boutons */
+.btn {
+  display: inline-block;
+  padding: .75rem 1rem;
+  border-radius: .8rem;
+  border: 1px solid transparent;
+  text-decoration: none;
+  font-weight: 600;
+}
+.btn-primary {
+  background: linear-gradient(180deg, var(--primary), var(--primary-strong));
+  color: #001026;
+  box-shadow: 0 6px 18px rgba(14,165,233,.3);
+}
+.btn-primary:hover { filter: brightness(1.05); }
+.btn-secondary {
+  background: transparent;
+  color: var(--primary-strong);
+  border-color: rgba(14,165,233,.6);
+  backdrop-filter: blur(2px);
+}
+.btn:focus-visible { outline: 3px solid #fff; outline-offset: 2px; }
+
+/* Cartes Services */
+.cards {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 1rem;
+}
+.card {
+  background: linear-gradient(180deg, rgba(255,255,255,.05), rgba(255,255,255,.02));
+  border: 1px solid rgba(255,255,255,.08);
+  border-radius: var(--radius);
+  padding: 1rem;
+  box-shadow: var(--shadow);
+}
+.card h3 { margin-top: .2rem; }
+.card p { color: var(--muted); }
+
+/* Tarifs */
+.price-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 1rem;
+}
+.price-card {
+  background: linear-gradient(180deg, rgba(71,85,105,.4), rgba(71,85,105,.15));
+  border: 1px solid rgba(255,255,255,.12);
+  border-radius: var(--radius);
+  padding: 1rem;
+}
+.price-card .price {
+  margin: .3rem 0 0 0;
+  font-weight: 700;
+  color: #cfe9ff;
+}
+
+/* Témoignages */
+.testimonials {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 1rem;
+}
+blockquote {
+  margin: 0;
+  padding: 1rem 1.1rem;
+  border-left: 4px solid var(--primary);
+  background: linear-gradient(90deg, rgba(30,144,255,.08), transparent 60%);
+}
+blockquote footer { color: var(--muted); margin-top: .6rem; }
+
+/* Formulaire de contact */
+.contact-form {
+  display: grid;
+  gap: .9rem;
+}
+.form-row { display: grid; gap: .4rem; }
+label { font-weight: 600; }
+input, textarea {
+  width: 100%;
+  padding: .8rem .9rem;
+  color: var(--text);
+  background: linear-gradient(180deg, rgba(255,255,255,.04), rgba(255,255,255,.02));
+  border: 1px solid rgba(255,255,255,.15);
+  border-radius: .6rem;
+}
+input::placeholder, textarea::placeholder { color: #9fb1c7; }
+input:focus-visible, textarea:focus-visible {
+  outline: 3px solid var(--primary);
+  outline-offset: 1px;
+}
+
+/* Pied de page */
+.site-footer {
+  margin-top: 2rem;
+  padding: 1.2rem 1rem;
+  text-align: center;
+  color: var(--muted);
+  border-top: 1px solid rgba(255,255,255,.08);
+  background: rgba(10,15,26,.6);
+}
+
+/* Réduction des animations si demandé */
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
+  * { transition: none !important; animation: none !important; }
+}
+
+/* Responsive ≥ 700px */
+@media (min-width: 700px) {
+  .nav-toggle { padding: 0; border-bottom: none; }
+  .nav-toggle > summary { display: none; }
+  /* Toujours afficher la nav au-dessus du breakpoint */
+  .nav-toggle > .site-nav { display: block !important; }
+  .site-nav ul { justify-content: center; flex-direction: row; }
+  .hero-inner { padding: 3rem 1rem 3.2rem; }
+  .cards { grid-template-columns: repeat(2, 1fr); }
+  .price-grid { grid-template-columns: repeat(3, 1fr); }
+  .testimonials { grid-template-columns: repeat(2, 1fr); }
+}
+
+/* Responsive ≥ 1000px */
+@media (min-width: 1000px) {
+  .brand { padding: 1rem 2rem .7rem; }
+  .site-nav ul { padding-inline: 2rem; }
+  .hero-inner { padding-inline: 2rem; }
+  .section { padding: 3rem 2rem; }
+}

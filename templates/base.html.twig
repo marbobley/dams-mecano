@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="fr">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <title>{% block title %}Dam's service auto 34{% endblock %}</title>
+        <meta name="description" content="Dam's service auto 34 – mécanicien indépendant. Entretien, réparation et service rapide.">
+        <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 128 128'%3E%3Crect width='128' height='128' rx='16' fill='%230a0f1a'/%3E%3Cpath d='M22 80 L64 24 L106 80' fill='none' stroke='%233aa0ff' stroke-width='10'/%3E%3Ccircle cx='64' cy='86' r='18' fill='%236b778d' stroke='%230cf' stroke-width='6'/%3E%3C/svg%3E">
+        {% block stylesheets %}
+            <link rel="stylesheet" href="{{ asset('styles/app.css') }}">
+        {% endblock %}
+    </head>
+    <body>
+        <a class="skip-link" href="#contenu">Aller au contenu</a>
+        {% block body %}{% endblock %}
+        <footer class="site-footer" role="contentinfo">
+            <p>&copy; {{ "now"|date("Y") }} Dam's service auto 34. Tous droits réservés.</p>
+        </footer>
+    </body>
+</html>
