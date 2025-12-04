@@ -1,6 +1,6 @@
 {% extends 'base.html.twig' %}
-
-{% block title %}Dam's Service Auto 34{% endblock %}
+{% set titleSite = 'Dam\'s Services Auto 34' %}
+{% block title %}{{ titleSite }}{% endblock %}
 
 {% block body %}
     <header>
@@ -11,7 +11,7 @@
                          alt="Logo Dam's Service Auto 34"
                          width="32" height="32"
                          class="me-2 d-inline-block align-text-top rounded">
-                    <span>Dam's Service Auto 34</span>
+                    <span>{{ titleSite }}</span>
                 </a>
                 <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Basculer la navigation">
                     <span class="navbar-toggler-icon"></span>
@@ -35,7 +35,7 @@
             <div class="container">
                 <div class="row align-items-center g-4">
                     <div class="col-12 col-lg-6">
-                        <h1 class="display-5 fw-bold">Mécanicien à domicile, rapide et fiable</h1>
+                        <h1 class="display-5 fw-bold">Mécanicien à domicile, rapide et fiable avec plus de 20 ans d'expériences</h1>
                         <p class="lead text-secondary">
                             Entretien, révision et réparations sur place. Nous venons à vous pour vous faire gagner du temps.
                         </p>
@@ -162,8 +162,8 @@
                             <div class="card-header bg-primary text-white">Entretien</div>
                             <div class="card-body">
                                 <ul class="list-unstyled small text-secondary mb-4">
-                                    <li>Vidange + filtre: dès 79€</li>
-                                    <li>Révision standard: dès 139€</li>
+                                    <li>Vidange + filtre: dès 89€</li>
+                                    <li>Révision standard: dès 149€</li>
                                 </ul>
                                 <a href="#contact" class="btn btn-primary w-100">Demander un devis</a>
                             </div>
