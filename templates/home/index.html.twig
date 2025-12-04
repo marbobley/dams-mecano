@@ -1,1 +1,293 @@
 {% extends 'base.html.twig' %}
+
+{% block title %}DAMS Mecano — Mécanicien à domicile{% endblock %}
+
+{% block body %}
+    <header>
+        <nav id="mainNavbar" class="navbar navbar-expand-lg navbar-light bg-light sticky-top border-bottom">
+            <div class="container">
+                <a class="navbar-brand fw-bold" href="#hero">DAMS Mecano</a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Basculer la navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarNav">
+                    <ul class="navbar-nav ms-auto">
+                        <li class="nav-item"><a class="nav-link" href="#services">Services</a></li>
+                        <li class="nav-item"><a class="nav-link" href="#process">Fonctionnement</a></li>
+                        <li class="nav-item"><a class="nav-link" href="#pricing">Tarifs</a></li>
+                        <li class="nav-item"><a class="nav-link" href="#testimonials">Avis</a></li>
+                        <li class="nav-item"><a class="nav-link btn btn-primary text-white ms-lg-2 px-3" href="#contact">Contact</a></li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <main id="content" class="mt-0">
+        <!-- Hero -->
+        <section id="hero" class="py-5 bg-white">
+            <div class="container">
+                <div class="row align-items-center g-4">
+                    <div class="col-12 col-lg-6">
+                        <h1 class="display-5 fw-bold">Mécanicien à domicile, rapide et fiable</h1>
+                        <p class="lead text-secondary">
+                            Entretien, révision et réparations sur place. Nous venons à vous pour vous faire gagner du temps.
+                        </p>
+                        <div class="d-flex gap-2 flex-wrap">
+                            <a href="#contact" class="btn btn-primary btn-lg">Demander un devis</a>
+                            <a href="#services" class="btn btn-outline-primary btn-lg">Voir nos services</a>
+                        </div>
+                        <ul class="list-unstyled mt-3 text-secondary small">
+                            <li class="mb-1">• Intervention à domicile ou sur votre lieu de travail</li>
+                            <li class="mb-1">• Pièces garanties et main d’œuvre qualifiée</li>
+                            <li class="mb-1">• Devis transparent avant intervention</li>
+                        </ul>
+                    </div>
+                    <div class="col-12 col-lg-6 text-center">
+                        <img src="https://images.unsplash.com/photo-1542362567-b07e54358753?q=80&w=1200&auto=format&fit=crop" alt="Mécanicien à domicile" class="img-fluid rounded shadow-sm">
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Services -->
+        <section id="services" class="py-5 bg-light">
+            <div class="container">
+                <div class="d-flex justify-content-between align-items-end flex-wrap gap-2 mb-4">
+                    <h2 class="h3 m-0">Nos services</h2>
+                    <span class="badge rounded-pill text-bg-primary">Déplacement inclus</span>
+                </div>
+                <div class="row g-3 g-md-4">
+                    <div class="col-12 col-md-6 col-lg-4">
+                        <div class="card h-100 shadow-sm">
+                            <div class="card-body">
+                                <h3 class="h5">Révision et entretien</h3>
+                                <p class="text-secondary">Vidange, filtres, niveaux, courroies. Carnet d’entretien respecté.</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-12 col-md-6 col-lg-4">
+                        <div class="card h-100 shadow-sm">
+                            <div class="card-body">
+                                <h3 class="h5">Freinage</h3>
+                                <p class="text-secondary">Remplacement plaquettes/disques, purge de frein, diagnostic ABS.</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-12 col-md-6 col-lg-4">
+                        <div class="card h-100 shadow-sm">
+                            <div class="card-body">
+                                <h3 class="h5">Batterie et démarrage</h3>
+                                <p class="text-secondary">Test batterie, remplacement, contrôle alternateur et démarreur.</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-12 col-md-6 col-lg-4">
+                        <div class="card h-100 shadow-sm">
+                            <div class="card-body">
+                                <h3 class="h5">Pneumatiques</h3>
+                                <p class="text-secondary">Montage, équilibrage, permutation saisonnière (sur jantes).</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-12 col-md-6 col-lg-4">
+                        <div class="card h-100 shadow-sm">
+                            <div class="card-body">
+                                <h3 class="h5">Diagnostic</h3>
+                                <p class="text-secondary">Lecture OBD, recherche de pannes mécaniques et électriques.</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-12 col-md-6 col-lg-4">
+                        <div class="card h-100 shadow-sm">
+                            <div class="card-body">
+                                <h3 class="h5">Autres</h3>
+                                <p class="text-secondary">Amortisseurs, échappement, éclairage, et plus sur demande.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Process -->
+        <section id="process" class="py-5">
+            <div class="container">
+                <h2 class="h3 mb-4">Comment ça marche ?</h2>
+                <div class="row g-3 g-md-4">
+                    <div class="col-12 col-md-4">
+                        <div class="card h-100 border-0">
+                            <div class="card-body">
+                                <span class="badge text-bg-secondary mb-2">1</span>
+                                <h3 class="h5">Demandez un devis</h3>
+                                <p class="text-secondary">Contactez-nous avec votre immatriculation et le service souhaité.</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-12 col-md-4">
+                        <div class="card h-100 border-0">
+                            <div class="card-body">
+                                <span class="badge text-bg-secondary mb-2">2</span>
+                                <h3 class="h5">Nous venons à vous</h3>
+                                <p class="text-secondary">Intervention à domicile ou sur site au créneau qui vous arrange.</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-12 col-md-4">
+                        <div class="card h-100 border-0">
+                            <div class="card-body">
+                                <span class="badge text-bg-secondary mb-2">3</span>
+                                <h3 class="h5">Vous repartez serein</h3>
+                                <p class="text-secondary">Facture claire, conseils d’entretien, pièces garanties.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Pricing -->
+        <section id="pricing" class="py-5 bg-light">
+            <div class="container">
+                <h2 class="h3 mb-4">Tarifs indicatifs</h2>
+                <div class="row g-3 g-md-4">
+                    <div class="col-12 col-md-6 col-lg-4">
+                        <div class="card h-100 border-primary">
+                            <div class="card-header bg-primary text-white">Entretien</div>
+                            <div class="card-body">
+                                <ul class="list-unstyled small text-secondary mb-4">
+                                    <li>Vidange + filtre: dès 79€</li>
+                                    <li>Révision standard: dès 139€</li>
+                                </ul>
+                                <a href="#contact" class="btn btn-primary w-100">Demander un devis</a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-12 col-md-6 col-lg-4">
+                        <div class="card h-100 border-success">
+                            <div class="card-header bg-success text-white">Freinage</div>
+                            <div class="card-body">
+                                <ul class="list-unstyled small text-secondary mb-4">
+                                    <li>Plaquettes AV/AR: dès 99€</li>
+                                    <li>Disques + plaquettes: dès 199€</li>
+                                </ul>
+                                <a href="#contact" class="btn btn-success w-100">Je réserve</a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-12 col-md-6 col-lg-4">
+                        <div class="card h-100 border-dark">
+                            <div class="card-header bg-dark text-white">Diagnostic</div>
+                            <div class="card-body">
+                                <ul class="list-unstyled small text-secondary mb-4">
+                                    <li>Contrôle électronique OBD: 39€</li>
+                                    <li>Diagnostic approfondi: sur devis</li>
+                                </ul>
+                                <a href="#contact" class="btn btn-dark w-100">Me rappeler</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <p class="text-secondary small mt-3">Tarifs hors pièces. Déplacement inclus en zone couverte.</p>
+            </div>
+        </section>
+
+        <!-- Testimonials -->
+        <section id="testimonials" class="py-5">
+            <div class="container">
+                <h2 class="h3 mb-4">Ils nous font confiance</h2>
+                <div id="carouselTestimonials" class="carousel slide" data-bs-ride="carousel">
+                    <div class="carousel-inner">
+                        <div class="carousel-item active">
+                            <figure class="text-center">
+                                <blockquote class="blockquote">
+                                    <p>Intervention nickel devant chez moi, super pratique et tarif correct.</p>
+                                </blockquote>
+                                <figcaption class="blockquote-footer">Mélanie</figcaption>
+                            </figure>
+                        </div>
+                        <div class="carousel-item">
+                            <figure class="text-center">
+                                <blockquote class="blockquote">
+                                    <p>Changement de plaquettes en 1h, très pro. Je recommande.</p>
+                                </blockquote>
+                                <figcaption class="blockquote-footer">Karim</figcaption>
+                            </figure>
+                        </div>
+                        <div class="carousel-item">
+                            <figure class="text-center">
+                                <blockquote class="blockquote">
+                                    <p>Devis clair, ponctuel et de bons conseils.</p>
+                                </blockquote>
+                                <figcaption class="blockquote-footer">Arthur</figcaption>
+                            </figure>
+                        </div>
+                    </div>
+                    <button class="carousel-control-prev" type="button" data-bs-target="#carouselTestimonials" data-bs-slide="prev">
+                        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                        <span class="visually-hidden">Précédent</span>
+                    </button>
+                    <button class="carousel-control-next" type="button" data-bs-target="#carouselTestimonials" data-bs-slide="next">
+                        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                        <span class="visually-hidden">Suivant</span>
+                    </button>
+                </div>
+            </div>
+        </section>
+
+        <!-- Contact -->
+        <section id="contact" class="py-5 bg-dark text-white">
+            <div class="container">
+                <div class="row g-4 align-items-center">
+                    <div class="col-12 col-lg-6">
+                        <h2 class="h3">Contact & devis</h2>
+                        <p class="text-white-50">Réponse sous 24h ouvrées. Indiquez votre immatriculation pour un devis précis.</p>
+                        <ul class="list-unstyled small text-white-50">
+                            <li>📍 Zone: Herault</li>
+                            <li>🕑 Lun–Sam: 8h–19h</li>
+                            <li>☎️ 06 12 34 56 78</li>
+                        </ul>
+                    </div>
+                    <div class="col-12 col-lg-6">
+                        <form class="row g-3">
+                            <div class="col-12">
+                                <label for="name" class="form-label">Nom</label>
+                                <input type="text" id="name" class="form-control" placeholder="Votre nom" required>
+                            </div>
+                            <div class="col-12 col-md-6">
+                                <label for="phone" class="form-label">Téléphone</label>
+                                <input type="tel" id="phone" class="form-control" placeholder="06 12 34 56 78" required>
+                            </div>
+                            <div class="col-12 col-md-6">
+                                <label for="plate" class="form-label">Immatriculation</label>
+                                <input type="text" id="plate" class="form-control" placeholder="AB-123-CD">
+                            </div>
+                            <div class="col-12">
+                                <label for="message" class="form-label">Message</label>
+                                <textarea id="message" class="form-control" rows="4" placeholder="Décrivez votre besoin..."></textarea>
+                            </div>
+                            <div class="col-12">
+                                <button type="button" class="btn btn-primary w-100">Envoyer la demande</button>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    {% block javascripts %}
+        {{ parent() }}
+        <script>
+            // Active ScrollSpy sur le body une fois Bootstrap chargé (UMD expose window.bootstrap)
+            (function () {
+                if (window.bootstrap && typeof window.bootstrap.ScrollSpy === 'function') {
+                    new window.bootstrap.ScrollSpy(document.body, {
+                        target: '#mainNavbar',
+                        offset: 80
+                    });
+                }
+            })();
+        </script>
+    {% endblock %}
+{% endblock %}
