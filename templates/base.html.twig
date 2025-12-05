@@ -2,8 +2,14 @@
 <html lang="fr">
     <head>
         <meta charset="UTF-8">
+        {% set titleSite = 'Dam\'s Services Auto 34' %}
         <meta name="viewport" content="width=device-width, initial-scale=1">
-        <title>{% block title %}Welcome!{% endblock %}</title>
+        <meta
+            name="description"
+            content="Mécanicien à domicile. Nous venons à vous pour vous faire gagner du temps! Avec plus de 20 ans d'expérience,Dam's Service vous accompagne dans les réparations de votre voiture." />
+        <meta name="keywords" content="Mécanicien, voiture, réparation, service auto, domicile, Hérault, auto">
+        <meta name="author" content="Wilfried FOURNIER">
+        <title>{% block title %}{{ titleSite }}{% endblock %}</title>
         <link rel="icon" type="image/x-icon" href="{{ asset('favicon.ico') }}">
         {% block stylesheets %}
         {% endblock %}
@@ -13,6 +19,31 @@
         {% endblock %}
     </head>
     <body>
+    <header>
+        <nav id="mainNavbar" class="navbar navbar-expand-lg navbar-light bg-light sticky-top border-bottom">
+            <div class="container">
+                <a class="navbar-brand fw-bold d-flex align-items-center" href="#hero">
+                    <img src="{{ asset('images/logo.webp') }}"
+                         alt="Logo Dam's Service Auto 34"
+                         width="32" height="32"
+                         class="me-2 d-inline-block align-text-top rounded">
+                    <span>{{ titleSite }}</span>
+                </a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Basculer la navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarNav">
+                    <ul class="navbar-nav ms-auto">
+                        <li class="nav-item"><a class="nav-link" href="#services">Services</a></li>
+                        <li class="nav-item"><a class="nav-link" href="#process">Fonctionnement</a></li>
+                        <li class="nav-item"><a class="nav-link" href="#pricing">Tarifs</a></li>
+                        <li class="nav-item"><a class="nav-link" href="#testimonials">Avis</a></li>
+                        <li class="nav-item"><a class="nav-link btn btn-primary text-white ms-lg-2 px-3" href="#contact">Contact</a></li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+    </header>
     {% block body %}{% endblock %}
     </body>
 </html>
