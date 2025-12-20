@@ -474,7 +474,7 @@ namespace Symfony\Component\DependencyInjection\Loader\Configurator;
  *         max_host_connections?: int, // The maximum number of connections to a single host.
  *         default_options?: array{
  *             headers?: array<string, mixed>,
- *             vars?: list<mixed>,
+ *             vars?: array<string, mixed>,
  *             max_redirects?: int, // The maximum number of redirects to follow.
  *             http_version?: scalar|null, // The default HTTP version, typically 1.1 or 2.0, leave to null for the best version.
  *             resolve?: array<string, scalar|null>,
@@ -497,7 +497,7 @@ namespace Symfony\Component\DependencyInjection\Loader\Configurator;
  *                 md5?: mixed,
  *             },
  *             crypto_method?: scalar|null, // The minimum version of TLS to accept; must be one of STREAM_CRYPTO_METHOD_TLSv*_CLIENT constants.
- *             extra?: list<mixed>,
+ *             extra?: array<string, mixed>,
  *             rate_limiter?: scalar|null, // Rate limiter name to use for throttling requests. // Default: null
  *             caching?: bool|array{ // Caching configuration.
  *                 enabled?: bool, // Default: false
@@ -550,7 +550,7 @@ namespace Symfony\Component\DependencyInjection\Loader\Configurator;
  *                 md5?: mixed,
  *             },
  *             crypto_method?: scalar|null, // The minimum version of TLS to accept; must be one of STREAM_CRYPTO_METHOD_TLSv*_CLIENT constants.
- *             extra?: list<mixed>,
+ *             extra?: array<string, mixed>,
  *             rate_limiter?: scalar|null, // Rate limiter name to use for throttling requests. // Default: null
  *             caching?: bool|array{ // Caching configuration.
  *                 enabled?: bool, // Default: false
@@ -1509,6 +1509,7 @@ namespace Symfony\Component\DependencyInjection\Loader\Configurator;
  *     generate_final_classes?: bool, // Default: true
  *     generate_final_entities?: bool, // Default: false
  * }
+ * @psalm-type NoraVisitorConfig = array<mixed>
  * @psalm-type ConfigType = array{
  *     imports?: ImportsConfig,
  *     parameters?: ParametersConfig,
@@ -1522,6 +1523,7 @@ namespace Symfony\Component\DependencyInjection\Loader\Configurator;
  *     twig_extra?: TwigExtraConfig,
  *     security?: SecurityConfig,
  *     monolog?: MonologConfig,
+ *     nora_visitor?: NoraVisitorConfig,
  *     "when@dev"?: array{
  *         imports?: ImportsConfig,
  *         parameters?: ParametersConfig,
@@ -1538,6 +1540,7 @@ namespace Symfony\Component\DependencyInjection\Loader\Configurator;
  *         security?: SecurityConfig,
  *         monolog?: MonologConfig,
  *         maker?: MakerConfig,
+ *         nora_visitor?: NoraVisitorConfig,
  *     },
  *     "when@prod"?: array{
  *         imports?: ImportsConfig,
@@ -1552,6 +1555,7 @@ namespace Symfony\Component\DependencyInjection\Loader\Configurator;
  *         twig_extra?: TwigExtraConfig,
  *         security?: SecurityConfig,
  *         monolog?: MonologConfig,
+ *         nora_visitor?: NoraVisitorConfig,
  *     },
  *     "when@test"?: array{
  *         imports?: ImportsConfig,
@@ -1567,6 +1571,7 @@ namespace Symfony\Component\DependencyInjection\Loader\Configurator;
  *         twig_extra?: TwigExtraConfig,
  *         security?: SecurityConfig,
  *         monolog?: MonologConfig,
+ *         nora_visitor?: NoraVisitorConfig,
  *     },
  *     ...<string, ExtensionType|array{ // extra keys must follow the when@%env% pattern or match an extension alias
  *         imports?: ImportsConfig,
