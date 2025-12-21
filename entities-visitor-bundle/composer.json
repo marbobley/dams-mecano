@@ -1,0 +1,17 @@
+{
+    "name": "nora/entities-visitor-bundle",
+    "description": "manage visitor connexion",
+    "type": "symfony-bundle",
+    "autoload": {
+        "psr-4": {
+            "Nora\\EntitiesVisitorBundle\\": "src/"
+        }
+    },
+    "authors": [
+        {
+            "name": "Marbobley",
+            "email": "fournier.wilf@gmail.com"
+        }
+    ],
+    "require": {}
+}
