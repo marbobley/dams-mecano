@@ -35,6 +35,9 @@
             "migrations/.gitignore"
         ]
     },
+    "nora/entities-visitor-bundle": {
+        "version": "dev-V1.1.1_bundle_retry"
+    },
     "phpunit/phpunit": {
         "version": "12.4",
         "recipe": {
