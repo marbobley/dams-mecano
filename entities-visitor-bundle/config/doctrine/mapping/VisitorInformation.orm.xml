@@ -6,5 +6,6 @@
     <mapped-superclass name="Nora\EntitiesVisitorBundle\Model\VisitorInformation">
         <field name="ip" column="ip" type="string" />
         <field name="userAgent" column="user_agent" type="string" />
+        <field name="visitedAt" column="visited_at" type="datetime_immutable"/>
     </mapped-superclass>
 </doctrine-mapping>
