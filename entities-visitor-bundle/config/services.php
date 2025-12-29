@@ -2,10 +2,22 @@
 namespace Symfony\Component\DependencyInjection\Loader\Configurator;
 
 use Nora\EntitiesVisitorBundle\VisitorCounter;
+use Nora\EntitiesVisitorBundle\EventListener\VisitorListener as BundleVisitorListener;
 
 return static function (ContainerConfigurator $container): void {
-    $container->services()
+    $services = $container->services()
+        ->defaults()
+            ->autowire()
+            ->autoconfigure()
+    ;
+
+    $services
         ->set('nora.visitor_counter', VisitorCounter::class)
         ->alias(VisitorCounter::class, 'nora.visitor_counter')
+    ;
+
+    // Register the VisitorListener from the bundle so its AsEventListener attribute is processed
+    $services
+        ->set(BundleVisitorListener::class)
     ;
 };

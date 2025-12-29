@@ -1,6 +1,6 @@
 <?php
 
-namespace App\EventListener;
+namespace Nora\EntitiesVisitorBundle\EventListener;
 
 use App\Entity\VisitorInformation;
 use DateTimeImmutable;
@@ -13,8 +13,8 @@ final readonly class VisitorListener
 {
     public function __construct(private LoggerInterface $logger, private EntityManagerInterface $manager)
     {
-
     }
+
     #[AsEventListener]
     public function onTerminateEvent(TerminateEvent $event): void
     {
