@@ -1,10 +1,11 @@
 {
-    "name": "nora/entities-visitor-bundle",
+    "name": "marbobley/entities-visitor-bundle",
     "description": "manage visitor connexion",
     "type": "symfony-bundle",
+    "license": "MIT",
     "autoload": {
         "psr-4": {
-            "Nora\\EntitiesVisitorBundle\\": "src/"
+            "Marbobley\\EntitiesVisitorBundle\\": "src/"
         }
     },
     "authors": [
@@ -13,5 +14,7 @@
             "email": "fournier.wilf@gmail.com"
         }
     ],
-    "require": {}
+    "require": {
+        "doctrine/orm": "^3.6"
+    }
 }

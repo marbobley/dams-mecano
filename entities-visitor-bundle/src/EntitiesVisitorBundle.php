@@ -1,5 +1,5 @@
 <?php
-namespace Nora\EntitiesVisitorBundle;
+namespace Marbobley\EntitiesVisitorBundle;
 
 use Doctrine\Bundle\DoctrineBundle\DependencyInjection\Compiler\DoctrineOrmMappingsPass;
 use Symfony\Component\HttpKernel\Bundle\AbstractBundle;
@@ -10,7 +10,7 @@ final class EntitiesVisitorBundle extends AbstractBundle
     public function build(ContainerBuilder $container): void
     {
         $container->addCompilerPass(DoctrineOrmMappingsPass::createXmlMappingDriver(
-            [__DIR__.'/../config/doctrine/mapping' => 'Nora\EntitiesVisitorBundle\Model'],
+            [__DIR__.'/../config/doctrine/mapping' => 'Marbobley\EntitiesVisitorBundle\Model'],
         ));
     }
 

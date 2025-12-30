@@ -4,7 +4,7 @@ namespace App\Entity;
 
 use App\Repository\VisitorInformationRepository;
 use Doctrine\ORM\Mapping as ORM;
-use Nora\EntitiesVisitorBundle\Model\VisitorInformation as VisitorInformationModel;
+use Marbobley\EntitiesVisitorBundle\Model\VisitorInformation as VisitorInformationModel;
 
 #[ORM\Entity(repositoryClass: VisitorInformationRepository::class)]
 class VisitorInformation extends VisitorInformationModel

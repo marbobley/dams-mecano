@@ -141,7 +141,30 @@
       <path value="$PROJECT_DIR$/vendor/twig/twig" />
       <path value="$PROJECT_DIR$/vendor/egulias/email-validator" />
       <path value="$PROJECT_DIR$/bundles/VisitorBundle/vendor/composer" />
-      <path value="$PROJECT_DIR$/vendor/nora/entities-visitor-bundle" />
+      <path value="$PROJECT_DIR$/entities-visitor-bundle/vendor/composer" />
+      <path value="$PROJECT_DIR$/vendor/marbobley/entities-visitor-bundle" />
+      <path value="$PROJECT_DIR$/entities-visitor-bundle/vendor/symfony/polyfill-ctype" />
+      <path value="$PROJECT_DIR$/entities-visitor-bundle/vendor/doctrine/lexer" />
+      <path value="$PROJECT_DIR$/entities-visitor-bundle/vendor/symfony/deprecation-contracts" />
+      <path value="$PROJECT_DIR$/entities-visitor-bundle/vendor/doctrine/deprecations" />
+      <path value="$PROJECT_DIR$/entities-visitor-bundle/vendor/doctrine/dbal" />
+      <path value="$PROJECT_DIR$/entities-visitor-bundle/vendor/doctrine/collections" />
+      <path value="$PROJECT_DIR$/entities-visitor-bundle/vendor/symfony/service-contracts" />
+      <path value="$PROJECT_DIR$/entities-visitor-bundle/vendor/symfony/console" />
+      <path value="$PROJECT_DIR$/entities-visitor-bundle/vendor/symfony/polyfill-intl-grapheme" />
+      <path value="$PROJECT_DIR$/entities-visitor-bundle/vendor/symfony/var-exporter" />
+      <path value="$PROJECT_DIR$/entities-visitor-bundle/vendor/doctrine/orm" />
+      <path value="$PROJECT_DIR$/entities-visitor-bundle/vendor/doctrine/event-manager" />
+      <path value="$PROJECT_DIR$/entities-visitor-bundle/vendor/doctrine/instantiator" />
+      <path value="$PROJECT_DIR$/entities-visitor-bundle/vendor/doctrine/persistence" />
+      <path value="$PROJECT_DIR$/entities-visitor-bundle/vendor/doctrine/inflector" />
+      <path value="$PROJECT_DIR$/entities-visitor-bundle/vendor/psr/log" />
+      <path value="$PROJECT_DIR$/entities-visitor-bundle/vendor/psr/cache" />
+      <path value="$PROJECT_DIR$/entities-visitor-bundle/vendor/psr/container" />
+      <path value="$PROJECT_DIR$/entities-visitor-bundle/vendor/symfony/polyfill-intl-normalizer" />
+      <path value="$PROJECT_DIR$/entities-visitor-bundle/vendor/symfony/polyfill-php84" />
+      <path value="$PROJECT_DIR$/entities-visitor-bundle/vendor/symfony/polyfill-mbstring" />
+      <path value="$PROJECT_DIR$/entities-visitor-bundle/vendor/symfony/string" />
     </include_path>
   </component>
   <component name="PhpProjectSharedConfiguration" php_language_level="8.2" />
@@ -151,6 +174,7 @@
   <component name="PhpUnit">
     <phpunit_settings>
       <PhpUnitSettings custom_loader_path="$PROJECT_DIR$/vendor/autoload.php" />
+      <PhpUnitSettings custom_loader_path="$PROJECT_DIR$/entities-visitor-bundle/vendor/autoload.php" />
     </phpunit_settings>
   </component>
   <component name="PsalmOptionsConfiguration">
