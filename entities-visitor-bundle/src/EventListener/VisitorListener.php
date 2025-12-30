@@ -2,7 +2,7 @@
 
 namespace Nora\EntitiesVisitorBundle\EventListener;
 
-use App\Entity\VisitorInformation;
+use Nora\EntitiesVisitorBundle\Model\VisitorInformation as VisitorInformationModel;
 use DateTimeImmutable;
 use Doctrine\ORM\EntityManagerInterface;
 use Psr\Log\LoggerInterface;
@@ -41,11 +41,38 @@ final readonly class VisitorListener
             'userAgent' => $userAgent,
         ]);
 
-        $visitor = new VisitorInformation();
+        $entityClass = $this->resolveConcreteVisitorInformationClass();
+        if ($entityClass === null) {
+            // Aucune entité concrète trouvée dans l'application qui étend le modèle du bundle
+            $this->logger->warning('Aucune entité concrete pour VisitorInformation n’a été trouvée. Persistance ignorée.', [
+                'expected_parent' => VisitorInformationModel::class,
+            ]);
+            return;
+        }
+
+        $visitor = new $entityClass();
         $visitor->ip = $clientIP;
         $visitor->userAgent = $userAgent;
         $visitor->visitedAt = new DateTimeImmutable();
         $this->manager->persist($visitor);
         $this->manager->flush();
+    }
+
+    /**
+     * Trouve la classe d’entité (côté application) qui étend le modèle
+     * Nora\EntitiesVisitorBundle\Model\VisitorInformation, sans créer de
+     * dépendance directe vers App\Entity.
+     */
+    private function resolveConcreteVisitorInformationClass(): ?string
+    {
+        $metadataFactory = $this->manager->getMetadataFactory();
+        foreach ($metadataFactory->getAllMetadata() as $metadata) {
+            $className = $metadata->getName();
+            if (is_subclass_of($className, VisitorInformationModel::class)) {
+                return $className;
+            }
+        }
+
+        return null;
     }
 }
