@@ -11,6 +11,8 @@ use Symfony\Component\HttpKernel\Event\TerminateEvent;
 
 final readonly class VisitorListener
 {
+    const UNKNOWN = 'Unknown';
+
     public function __construct(private LoggerInterface $logger, private EntityManagerInterface $manager)
     {
     }
@@ -21,18 +23,18 @@ final readonly class VisitorListener
         $request = $event->getRequest();
 
         // Informations de base
-        $clientIP = $request->getClientIp() ?? 'Unknown';
-        $userAgent = $request->headers->get('User-Agent') ?? 'Unknown';
+        $clientIP = $request->getClientIp() ?? self::UNKNOWN;
+        $userAgent = $request->headers->get('User-Agent') ?? self::UNKNOWN;
 
         // Identifier le contrôleur/action et la route qui ont servi la requête
         // Symfony renseigne ces informations dans les attributs de la Request
-        $controller = $request->attributes->get('_controller') ?? 'Unknown';
-        $route = $request->attributes->get('_route') ?? 'Unknown';
+        $controller = $request->attributes->get('_controller') ?? self::UNKNOWN;
+        $route = $request->attributes->get('_route') ?? self::UNKNOWN;
         $path = $request->getPathInfo();
         $method = $request->getMethod();
 
         // Log détaillé pour savoir quel contrôleur a déclenché l'action
-        $this->logger->info('Visitor Information', [
+        $this->logger->debug('Visitor Information', [
             'ip' => $clientIP,
             'method' => $method,
             'path' => $path,
@@ -54,6 +56,7 @@ final readonly class VisitorListener
         $visitor->ip = $clientIP;
         $visitor->userAgent = $userAgent;
         $visitor->visitedAt = new DateTimeImmutable();
+        $visitor->method = $method;
         $this->manager->persist($visitor);
         $this->manager->flush();
     }
