@@ -35,8 +35,8 @@
             "migrations/.gitignore"
         ]
     },
-    "nora/entities-visitor-bundle": {
-        "version": "dev-V1.1.1_bundle_retry"
+    "marbobley/entities-visitor-bundle": {
+        "version": "dev-V1.2.0_eventListnerIntoBundle"
     },
     "phpunit/phpunit": {
         "version": "12.4",

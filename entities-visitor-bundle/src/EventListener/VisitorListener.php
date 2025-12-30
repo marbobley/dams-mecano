@@ -1,8 +1,8 @@
 <?php
 
-namespace Nora\EntitiesVisitorBundle\EventListener;
+namespace Marbobley\EntitiesVisitorBundle\EventListener;
 
-use Nora\EntitiesVisitorBundle\Model\VisitorInformation as VisitorInformationModel;
+use Marbobley\EntitiesVisitorBundle\Model\VisitorInformation as VisitorInformationModel;
 use DateTimeImmutable;
 use Doctrine\ORM\EntityManagerInterface;
 use Psr\Log\LoggerInterface;
@@ -60,7 +60,7 @@ final readonly class VisitorListener
 
     /**
      * Trouve la classe d’entité (côté application) qui étend le modèle
-     * Nora\EntitiesVisitorBundle\Model\VisitorInformation, sans créer de
+     * Marbobley\EntitiesVisitorBundle\Model\VisitorInformation, sans créer de
      * dépendance directe vers App\Entity.
      */
     private function resolveConcreteVisitorInformationClass(): ?string

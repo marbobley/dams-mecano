@@ -1,5 +1,5 @@
 <?php
-namespace  Nora\EntitiesVisitorBundle;
+namespace  Marbobley\EntitiesVisitorBundle;
 
 final class VisitorCounter{
 

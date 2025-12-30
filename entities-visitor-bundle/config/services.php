@@ -1,8 +1,8 @@
 <?php
 namespace Symfony\Component\DependencyInjection\Loader\Configurator;
 
-use Nora\EntitiesVisitorBundle\VisitorCounter;
-use Nora\EntitiesVisitorBundle\EventListener\VisitorListener as BundleVisitorListener;
+use Marbobley\EntitiesVisitorBundle\VisitorCounter;
+use Marbobley\EntitiesVisitorBundle\EventListener\VisitorListener as BundleVisitorListener;
 
 return static function (ContainerConfigurator $container): void {
     $services = $container->services()
