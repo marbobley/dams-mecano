@@ -1,11 +1,16 @@
 {
     "name": "marbobley/entities-visitor-bundle",
-    "description": "manage visitor connexion",
+    "description": "Manage visitor connexion information in Doctrine entities",
     "type": "symfony-bundle",
     "license": "MIT",
     "autoload": {
         "psr-4": {
             "Marbobley\\EntitiesVisitorBundle\\": "src/"
+        }
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "Marbobley\\EntitiesVisitorBundle\\Tests\\": "tests/"
         }
     },
     "authors": [
@@ -16,5 +21,8 @@
     ],
     "require": {
         "doctrine/orm": "^3.6"
+    },
+    "require-dev": {
+        "phpunit/phpunit": "^12.5"
     }
 }
