@@ -1,0 +1,2 @@
+entities_visitor_bundle:
+    enable: false #To activate or desactive the check of visitor
