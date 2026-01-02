@@ -5,7 +5,9 @@
       <sourceFolder url="file://$MODULE_DIR$/src" isTestSource="false" packagePrefix="App\" />
       <sourceFolder url="file://$MODULE_DIR$/tests" isTestSource="true" packagePrefix="App\Tests\" />
       <sourceFolder url="file://$MODULE_DIR$/entities-visitor-bundle/src" isTestSource="false" packagePrefix="Marbobley\EntitiesVisitorBundle\" />
-      <sourceFolder url="file://$MODULE_DIR$/entities-visitor-bundle/tests" isTestSource="true" packagePrefix="Marbobley\EntitiesVisitorBundle\Tests\" />
+      <sourceFolder url="file://$MODULE_DIR$/entities-visitor-bundle/tests" isTestSource="true" />
+      <sourceFolder url="file://$MODULE_DIR$/entities-visitor-bundle/tests" isTestSource="true" />
+      <sourceFolder url="file://$MODULE_DIR$/entities-visitor-bundle/spec" isTestSource="true" />
       <excludeFolder url="file://$MODULE_DIR$/vendor/composer" />
       <excludeFolder url="file://$MODULE_DIR$/vendor/doctrine/collections" />
       <excludeFolder url="file://$MODULE_DIR$/vendor/doctrine/dbal" />
@@ -134,6 +136,31 @@
       <excludeFolder url="file://$MODULE_DIR$/entities-visitor-bundle/vendor/symfony/var-exporter" />
       <excludeFolder url="file://$MODULE_DIR$/var" />
       <excludeFolder url="file://$MODULE_DIR$/vendor/marbobley/entities-visitor-bundle" />
+      <excludeFolder url="file://$MODULE_DIR$/entities-visitor-bundle/vendor/doctrine/doctrine-bundle" />
+      <excludeFolder url="file://$MODULE_DIR$/entities-visitor-bundle/vendor/doctrine/sql-formatter" />
+      <excludeFolder url="file://$MODULE_DIR$/entities-visitor-bundle/vendor/masterminds/html5" />
+      <excludeFolder url="file://$MODULE_DIR$/entities-visitor-bundle/vendor/psr/event-dispatcher" />
+      <excludeFolder url="file://$MODULE_DIR$/entities-visitor-bundle/vendor/symfony/browser-kit" />
+      <excludeFolder url="file://$MODULE_DIR$/entities-visitor-bundle/vendor/symfony/cache" />
+      <excludeFolder url="file://$MODULE_DIR$/entities-visitor-bundle/vendor/symfony/cache-contracts" />
+      <excludeFolder url="file://$MODULE_DIR$/entities-visitor-bundle/vendor/symfony/config" />
+      <excludeFolder url="file://$MODULE_DIR$/entities-visitor-bundle/vendor/symfony/css-selector" />
+      <excludeFolder url="file://$MODULE_DIR$/entities-visitor-bundle/vendor/symfony/dependency-injection" />
+      <excludeFolder url="file://$MODULE_DIR$/entities-visitor-bundle/vendor/symfony/doctrine-bridge" />
+      <excludeFolder url="file://$MODULE_DIR$/entities-visitor-bundle/vendor/symfony/dom-crawler" />
+      <excludeFolder url="file://$MODULE_DIR$/entities-visitor-bundle/vendor/symfony/error-handler" />
+      <excludeFolder url="file://$MODULE_DIR$/entities-visitor-bundle/vendor/symfony/event-dispatcher" />
+      <excludeFolder url="file://$MODULE_DIR$/entities-visitor-bundle/vendor/symfony/event-dispatcher-contracts" />
+      <excludeFolder url="file://$MODULE_DIR$/entities-visitor-bundle/vendor/symfony/filesystem" />
+      <excludeFolder url="file://$MODULE_DIR$/entities-visitor-bundle/vendor/symfony/finder" />
+      <excludeFolder url="file://$MODULE_DIR$/entities-visitor-bundle/vendor/symfony/framework-bundle" />
+      <excludeFolder url="file://$MODULE_DIR$/entities-visitor-bundle/vendor/symfony/http-foundation" />
+      <excludeFolder url="file://$MODULE_DIR$/entities-visitor-bundle/vendor/symfony/http-kernel" />
+      <excludeFolder url="file://$MODULE_DIR$/entities-visitor-bundle/vendor/symfony/polyfill-php85" />
+      <excludeFolder url="file://$MODULE_DIR$/entities-visitor-bundle/vendor/symfony/routing" />
+      <excludeFolder url="file://$MODULE_DIR$/entities-visitor-bundle/vendor/symfony/test-pack" />
+      <excludeFolder url="file://$MODULE_DIR$/entities-visitor-bundle/vendor/symfony/var-dumper" />
+      <excludeFolder url="file://$MODULE_DIR$/entities-visitor-bundle/vendor/symfony/yaml" />
     </content>
     <orderEntry type="inheritedJdk" />
     <orderEntry type="sourceFolder" forTests="false" />

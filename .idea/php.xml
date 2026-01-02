@@ -10,6 +10,11 @@
     <option name="highlightLevel" value="WARNING" />
     <option name="transferred" value="true" />
   </component>
+  <component name="PhpCodeSniffer">
+    <phpcs_settings>
+      <phpcs_by_interpreter asDefaultInterpreter="true" interpreter_id="7cd12bc4-0c32-46d3-9495-b03a67b61e86" timeout="30000" />
+    </phpcs_settings>
+  </component>
   <component name="PhpIncludePathManager">
     <include_path>
       <path value="$PROJECT_DIR$/vendor/symfony/routing" />
@@ -166,9 +171,39 @@
       <path value="$PROJECT_DIR$/entities-visitor-bundle/vendor/phar-io/manifest" />
       <path value="$PROJECT_DIR$/entities-visitor-bundle/vendor/nikic/php-parser" />
       <path value="$PROJECT_DIR$/entities-visitor-bundle/vendor/theseer/tokenizer" />
+      <path value="$PROJECT_DIR$/entities-visitor-bundle/vendor/psr/event-dispatcher" />
+      <path value="$PROJECT_DIR$/entities-visitor-bundle/vendor/symfony/error-handler" />
+      <path value="$PROJECT_DIR$/entities-visitor-bundle/vendor/symfony/event-dispatcher" />
+      <path value="$PROJECT_DIR$/entities-visitor-bundle/vendor/symfony/event-dispatcher-contracts" />
+      <path value="$PROJECT_DIR$/entities-visitor-bundle/vendor/symfony/http-foundation" />
+      <path value="$PROJECT_DIR$/entities-visitor-bundle/vendor/symfony/var-dumper" />
+      <path value="$PROJECT_DIR$/entities-visitor-bundle/vendor/symfony/polyfill-php85" />
+      <path value="$PROJECT_DIR$/entities-visitor-bundle/vendor/symfony/http-kernel" />
+      <path value="$PROJECT_DIR$/entities-visitor-bundle/vendor/doctrine/sql-formatter" />
+      <path value="$PROJECT_DIR$/entities-visitor-bundle/vendor/doctrine/doctrine-bundle" />
+      <path value="$PROJECT_DIR$/entities-visitor-bundle/vendor/masterminds/html5" />
+      <path value="$PROJECT_DIR$/entities-visitor-bundle/vendor/symfony/css-selector" />
+      <path value="$PROJECT_DIR$/entities-visitor-bundle/vendor/symfony/cache-contracts" />
+      <path value="$PROJECT_DIR$/entities-visitor-bundle/vendor/symfony/yaml" />
+      <path value="$PROJECT_DIR$/entities-visitor-bundle/vendor/symfony/framework-bundle" />
+      <path value="$PROJECT_DIR$/entities-visitor-bundle/vendor/symfony/browser-kit" />
+      <path value="$PROJECT_DIR$/entities-visitor-bundle/vendor/symfony/dom-crawler" />
+      <path value="$PROJECT_DIR$/entities-visitor-bundle/vendor/symfony/routing" />
+      <path value="$PROJECT_DIR$/entities-visitor-bundle/vendor/symfony/test-pack" />
+      <path value="$PROJECT_DIR$/entities-visitor-bundle/vendor/symfony/dependency-injection" />
+      <path value="$PROJECT_DIR$/entities-visitor-bundle/vendor/symfony/config" />
+      <path value="$PROJECT_DIR$/entities-visitor-bundle/vendor/symfony/cache" />
+      <path value="$PROJECT_DIR$/entities-visitor-bundle/vendor/symfony/doctrine-bridge" />
+      <path value="$PROJECT_DIR$/entities-visitor-bundle/vendor/symfony/filesystem" />
+      <path value="$PROJECT_DIR$/entities-visitor-bundle/vendor/symfony/finder" />
     </include_path>
   </component>
   <component name="PhpProjectSharedConfiguration" php_language_level="8.2" />
+  <component name="PhpStan">
+    <PhpStan_settings>
+      <phpstan_by_interpreter asDefaultInterpreter="true" interpreter_id="7cd12bc4-0c32-46d3-9495-b03a67b61e86" timeout="60000" />
+    </PhpStan_settings>
+  </component>
   <component name="PhpStanOptionsConfiguration">
     <option name="transferred" value="true" />
   </component>
@@ -177,6 +212,11 @@
       <PhpUnitSettings custom_loader_path="$PROJECT_DIR$/vendor/autoload.php" />
       <PhpUnitSettings custom_loader_path="$PROJECT_DIR$/entities-visitor-bundle/vendor/autoload.php" />
     </phpunit_settings>
+  </component>
+  <component name="Psalm">
+    <Psalm_settings>
+      <psalm_fixer_by_interpreter asDefaultInterpreter="true" interpreter_id="7cd12bc4-0c32-46d3-9495-b03a67b61e86" timeout="60000" />
+    </Psalm_settings>
   </component>
   <component name="PsalmOptionsConfiguration">
     <option name="transferred" value="true" />

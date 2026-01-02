@@ -1,5 +1,5 @@
 # entities-visitor-bundle
-Package to manage visitors with DB persistence
+Package to manage visitors with DB persistence in Symfony
 
 ## Installation
 composer require marbobley/entities-visitor-bundle
@@ -13,11 +13,22 @@ When someone visits your site, the event listener will create an entry into the 
 
 ## Features
 Currently, the bundle only supports Doctrine ORM.
-Column saved : 
+### Column saved : 
 * client ip
 * user Agent
 * visited at 
 * method 
+* route
+* control
+* path
+
+### Setting : 
+Create a config file : 
+* In config/packages/entities_visitor_bundle.yaml
+```
+entities_visitor_bundle:
+    enable: false #To activate or desactive the check of visitor 
+```
 
 ## Example 
 ````
