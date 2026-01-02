@@ -6,6 +6,7 @@
       <sourceFolder url="file://$MODULE_DIR$/tests" isTestSource="true" packagePrefix="App\Tests\" />
       <sourceFolder url="file://$MODULE_DIR$/entities-visitor-bundle/src" isTestSource="false" packagePrefix="Marbobley\EntitiesVisitorBundle\" />
       <sourceFolder url="file://$MODULE_DIR$/entities-visitor-bundle/tests" isTestSource="true" />
+      <sourceFolder url="file://$MODULE_DIR$/entities-visitor-bundle/tests" isTestSource="true" packagePrefix="Marbobley\EntitiesVisitorBundle\Tests\" />
       <sourceFolder url="file://$MODULE_DIR$/entities-visitor-bundle/spec" isTestSource="true" />
       <excludeFolder url="file://$MODULE_DIR$/vendor/composer" />
       <excludeFolder url="file://$MODULE_DIR$/vendor/doctrine/collections" />
