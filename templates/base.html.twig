@@ -4,11 +4,9 @@
         <meta charset="UTF-8">
         {% set titleSite = 'Dam\'s Services Auto 34' %}
         <meta name="viewport" content="width=device-width, initial-scale=1">
-        <meta
-            name="description"
-            content="Mécanicien à domicile. Nous venons à vous pour vous faire gagner du temps! Avec plus de 20 ans d'expérience,Dam's Service vous accompagne dans les réparations de votre voiture." />
-        <meta name="keywords" content="Mécanicien, voiture, réparation, service auto, domicile, Hérault, auto">
-        <meta name="author" content="Wilfried FOURNIER">
+
+        {%  block seo %}
+        {% endblock %}
         <title>{% block title %}{{ titleSite }}{% endblock %}</title>
         <link rel="icon" type="image/x-icon" href="{{ asset('favicon.ico') }}">
         {% block stylesheets %}
