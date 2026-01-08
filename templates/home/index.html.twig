@@ -256,19 +256,4 @@
             </div>
         </section>
     </main>
-
-    {% block javascripts %}
-        {{ parent() }}
-        <script>
-            // Active ScrollSpy sur le body une fois Bootstrap chargé (UMD expose window.bootstrap)
-            (function () {
-                if (window.bootstrap && typeof window.bootstrap.ScrollSpy === 'function') {
-                    new window.bootstrap.ScrollSpy(document.body, {
-                        target: '#mainNavbar',
-                        offset: 80
-                    });
-                }
-            })();
-        </script>
-    {% endblock %}
 {% endblock %}
