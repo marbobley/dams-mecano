@@ -1,23 +1,25 @@
 {% extends 'base.html.twig' %}
+
 {% block seo %}
     <meta
-    name="description"
-    content="Mécanicien à domicile. Je viens à vous pour vous faire gagner du temps! Avec mes 20 ans d'expérience, je vous accompagne dans les réparations de votre voiture." />
-
+        name="description"
+        content={% block meta_description %}"Mécanicien à domicile. Je viens à vous pour vous faire gagner du temps! Avec mes 20 ans d'expérience, je vous accompagne dans les réparations de votre voiture."{% endblock %} />
     <meta name="keywords" content="Mécanicien, voiture, réparation, service auto, domicile, Hérault, auto">
-    <!--Seo Réseaux-->
-    <meta property="og:title" content="Dam\'s Services Auto 34, les réparations à domicile!">
-    <meta property="og:type" content=website >
-    <meta property="og:image" content="{{ asset('favicon.ico') }}">
-    <meta property="og:description" content="Mécanicien à domicile. Je viens à vous pour vous faire gagner du temps! Avec mes 20 ans d'expérience, je vous accompagne dans les réparations de votre voiture." />
-     <meta property="og:site_name" content="Dam\'s Services Auto 34">
-    <meta property="og:url" content="{{ app.request.getSchemeAndHttpHost() }}">
-    <!--Seo Twitter-->
-    <meta property="twitter:title" content="Dam\'s Services Auto 34">
-    <meta property="twitter:type" content=website >
-    <meta property="twitter:description" content="Mécanicien à domicile. Je viens à vous pour vous faire gagner du temps! Avec mes 20 ans d'expérience, je vous accompagne dans les réparations de votre voiture.">
-    <meta property="twitter:image" content="{{ asset('favicon.ico') }}">
-    <meta name="twitter:card" content=summary >
+
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="{{ app.request.uri }}">
+    <meta property="og:title" content="{{ block('title') }}">
+    <meta property="og:description" content="{{ block('meta_description') }}">
+    <meta property="og:image" content="{{ absolute_url(asset('images/image_home.webp')) }}">
+
+    <!-- Twitter -->
+    <meta property="twitter:card" content="summary_large_image">
+    <meta property="twitter:url" content="{{ app.request.uri }}">
+    <meta property="twitter:title" content="{{ block('title') }}">
+    <meta property="twitter:description" content="{{ block('meta_description') }}">
+    <meta property="twitter:image" content="{{ absolute_url(asset('images/image_home.webp')) }}">
+
     <meta name="author" content="Wilfried FOURNIER">
 {% endblock %}
 
@@ -158,7 +160,7 @@
                             <div class="card-body">
                                 <ul class="list-unstyled small text-secondary mb-4">
                                     <li>Vidange + filtre: dès 89€</li>
-                                    <li>Révision standard: dès 149€</li>
+                                    <li>Révision standard : dès 149€</li>
                                 </ul>
                                 <a href="#contact" class="btn btn-primary w-100">Demander un devis</a>
                             </div>
@@ -170,7 +172,7 @@
                             <div class="card-body">
                                 <ul class="list-unstyled small text-secondary mb-4">
                                     <li>Plaquettes AV/AR: dès 99€</li>
-                                    <li>Disques + plaquettes: dès 199€</li>
+                                    <li>Disques + plaquettes : dès 199€</li>
                                 </ul>
                                 <a href="#contact" class="btn btn-success w-100">Je réserve</a>
                             </div>
@@ -196,7 +198,7 @@
         <!-- Testimonials -->
         <section id="testimonials" class="py-5">
             <div class="container">
-                <h2 class="h3 mb-4">Ils nous font confiance</h2>
+                <h2 class="h3 mb-4">Ils me font confiances.</h2>
                 <div id="carouselTestimonials" class="carousel slide" data-bs-ride="carousel">
                     <div class="carousel-inner">
                         <div class="carousel-item active">
@@ -254,19 +256,4 @@
             </div>
         </section>
     </main>
-
-    {% block javascripts %}
-        {{ parent() }}
-        <script>
-            // Active ScrollSpy sur le body une fois Bootstrap chargé (UMD expose window.bootstrap)
-            (function () {
-                if (window.bootstrap && typeof window.bootstrap.ScrollSpy === 'function') {
-                    new window.bootstrap.ScrollSpy(document.body, {
-                        target: '#mainNavbar',
-                        offset: 80
-                    });
-                }
-            })();
-        </script>
-    {% endblock %}
 {% endblock %}
