@@ -8,6 +8,7 @@
         {%  block seo %}
         {% endblock %}
         <title>{% block title %}{{ titleSite }}{% endblock %}</title>
+        <link rel="canonical" href="{{ app.request.uri }}">
         <link rel="icon" type="image/x-icon" href="{{ asset('favicon.ico') }}">
         {% block stylesheets %}
         {% endblock %}
