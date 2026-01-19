@@ -4,12 +4,20 @@
     --bg-surface: #161a22;
     --bg-surface-2: #1c2230;
     --text-primary: #e6e6e6;
-    --text-secondary: #a8b0bd; /* contraste AA sur fond #161a22 */
+    --text-secondary: #a8b0bd;
     --border-color: #2a2f3a;
     --link: #8bb4ff;
     --link-hover: #b2ceff;
     --focus-ring: rgba(110, 168, 254, 0.45);
+
+    /* Couleurs Mécaniques */
+    --accent-orange: #ff6b35; /* Orange industriel */
+    --accent-blue: #2d5bff;   /* Bleu garage professionnel */
+    --metal-light: #4e5561;
+    --metal-dark: #2a2f3a;
 }
+
+@import url('https://fonts.googleapis.com/css2?family=Roboto+Condensed:wght@400;700&family=Roboto:wght@400;700&display=swap');
 
 html, body {
     height: 100%;
@@ -18,8 +26,15 @@ html, body {
 body {
     background-color: var(--bg-body);
     color: var(--text-primary);
+    font-family: 'Roboto', sans-serif;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
+}
+
+h1, h2, h3, .navbar-brand, .btn, .nav-link {
+    font-family: 'Roboto Condensed', sans-serif;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
 }
 
 /* Liens */
@@ -63,20 +78,87 @@ a:hover, a:focus { color: var(--link-hover); }
 }
 
 /* Cartes */
-.card { background-color: var(--bg-surface-2); color: var(--text-primary); }
-.card-header { background-color: var(--bg-surface); color: var(--text-primary); }
+.card {
+    background-color: var(--bg-surface-2);
+    color: var(--text-primary);
+    border: 1px solid var(--border-color);
+    border-radius: 4px;
+    transition: transform 0.2s ease, border-color 0.2s ease;
+}
+
+.card:hover {
+    border-color: var(--accent-blue);
+    transform: translateY(-5px);
+}
+
+.card-header {
+    background-color: var(--bg-surface);
+    color: var(--text-primary);
+    font-weight: bold;
+    border-bottom: 2px solid var(--accent-blue);
+}
+
+.card-body i {
+    color: var(--accent-orange);
+    margin-bottom: 1rem;
+}
 .card .text-secondary { color: var(--text-secondary) !important; }
 
+/* Boutons */
+.btn-primary {
+    background-color: var(--accent-blue);
+    border-color: var(--accent-blue);
+}
+.btn-primary:hover {
+    background-color: #1a46e6;
+    border-color: #1a46e6;
+}
+.btn-success {
+    background-color: #28a745;
+    border-color: #28a745;
+}
+
 /* Badges (pour s'assurer d'un contraste lisible sur fond sombre générique) */
-.badge.text-bg-primary { background-color: #0d6efd !important; color: #fff !important; }
-.badge.text-bg-secondary { background-color: #49515c !important; color: #fff !important; }
+.badge.text-bg-primary { background-color: var(--accent-blue) !important; color: #fff !important; }
+.badge.text-bg-secondary { background-color: var(--metal-light) !important; color: #fff !important; }
 
 /* Sections spécifiques */
-#hero { background-color: var(--bg-surface-2) !important; }
+#hero {
+    background-color: var(--bg-surface-2) !important;
+    border-bottom: 2px solid var(--accent-blue);
+}
 #services { background-color: var(--bg-surface) !important; }
-#pricing { background-color: var(--bg-surface) !important; }
-#testimonials { background-color: var(--bg-surface-2) !important; }
-/* #contact est déjà bg-dark/text-white via template Bootstrap */
+#process {
+    background-color: var(--bg-body);
+}
+#process .badge {
+    font-size: 1.2rem;
+    padding: 0.5rem 0.8rem;
+    border-radius: 4px;
+    background-color: var(--accent-orange) !important;
+}
+/* Pricing */
+#pricing .card {
+    border-width: 2px;
+}
+#pricing .card-header {
+    text-align: center;
+    font-size: 1.25rem;
+}
+#pricing .btn {
+    border-radius: 0;
+    font-weight: bold;
+}
+
+/* Témoignages */
+#testimonials {
+    background: linear-gradient(135deg, var(--bg-surface-2) 0%, var(--bg-body) 100%) !important;
+}
+
+/* Footer & Contact */
+#contact {
+    border-top: 3px solid var(--accent-orange);
+}
 
 /* Formulaires */
 .form-label { color: var(--text-primary); }

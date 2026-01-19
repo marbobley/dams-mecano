@@ -3,8 +3,8 @@
 {% block seo %}
     <meta
         name="description"
-        content={% block meta_description %}"Mécanicien à domicile. Je viens à vous pour vous faire gagner du temps! Avec mes 20 ans d'expérience, je vous accompagne dans les réparations de votre voiture."{% endblock %} />
-    <meta name="keywords" content="Mécanicien, voiture, réparation, service auto, domicile, Hérault, auto">
+        content={% block meta_description %}"Mécanicien à domicile dans l'Hérault (34). 20 ans d'expérience pour vos réparations voiture : entretien, freinage, batterie, diagnostic. Rapide et fiable."{% endblock %} />
+    <meta name="keywords" content="Mécanicien à domicile Hérault, réparation voiture Montpellier, entretien auto domicile, garage mobile 34, service auto Hérault">
 
     <!-- Open Graph / Facebook -->
     <meta property="og:type" content="website">
@@ -21,6 +21,42 @@
     <meta property="twitter:image" content="{{ absolute_url(asset('images/image_home.webp')) }}">
 
     <meta name="author" content="Wilfried FOURNIER">
+    <script type="application/ld+json">
+        {
+            "@context": "https://schema.org",
+            "@type": "AutoRepair",
+            "name": "Dam's Services Auto 34",
+            "image": "{{ absolute_url(asset('images/image_home.webp')) }}",
+            "@id": "{{ absolute_url(path('app_home')) }}",
+            "url": "{{ absolute_url(path('app_home')) }}",
+            "telephone": "0781601022",
+            "address": {
+                "@type": "PostalAddress",
+                "addressLocality": "Hérault",
+                "addressRegion": "Occitanie",
+                "addressCountry": "FR"
+            },
+            "geo": {
+                "@type": "GeoCoordinates",
+                "latitude": 43.6107,
+                "longitude": 3.8767
+            },
+            "openingHoursSpecification": {
+                "@type": "OpeningHoursSpecification",
+                "dayOfWeek": [
+                    "Monday",
+                    "Tuesday",
+                    "Wednesday",
+                    "Thursday",
+                    "Friday",
+                    "Saturday"
+                ],
+                "opens": "08:00",
+                "closes": "19:00"
+            },
+            "description": "Mécanicien à domicile dans l'Hérault. 20 ans d'expérience en entretien et réparation automobile sur le lieu de votre choix."
+        }
+    </script>
 {% endblock %}
 
 {% block body %}
@@ -31,23 +67,23 @@
             <div class="container">
                 <div class="row align-items-center g-4">
                     <div class="col-12 col-lg-6">
-                        <h1 class="display-5 fw-bold">Mécanicien à domicile, rapide et fiable</h1>
+                        <h1 class="display-5 fw-bold"><span class="text-primary">Mécanicien à domicile</span> dans l'Hérault, rapide et fiable</h1>
                         <p class="lead text-secondary">
-                            Entretien, révision et réparations sur place. Nous venons à vous pour vous faire gagner du temps.
+                            Entretien, révision et réparations automobiles sur place autour de Montpellier. Nous venons à vous pour vous faire gagner du temps.
                         </p>
                         <div class="d-flex gap-2 flex-wrap">
                             <a href="#contact" class="btn btn-primary btn-lg">Demander un devis</a>
                             <a href="#services" class="btn btn-outline-primary btn-lg">Voir nos services</a>
                         </div>
                         <ul class="list-unstyled mt-3 text-secondary small">
-                            <li class="mb-1">• Intervention à domicile ou sur votre lieu de travail</li>
-                            <li class="mb-1">• Pièces garanties</li>
-                            <li class="mb-1">• Main d’œuvre qualifiée avec plus de 20 ans d'expériences</li>
-                            <li class="mb-1">• Devis transparent avant intervention</li>
+                            <li class="mb-1"><i class="bi bi-geo-alt-fill text-primary me-2"></i>Intervention à domicile ou sur votre lieu de travail</li>
+                            <li class="mb-1"><i class="bi bi-shield-check text-primary me-2"></i>Pièces garanties</li>
+                            <li class="mb-1"><i class="bi bi-award-fill text-primary me-2"></i>Main d’œuvre qualifiée avec plus de 20 ans d'expériences</li>
+                            <li class="mb-1"><i class="bi bi-cash-stack text-primary me-2"></i>Devis transparent avant intervention</li>
                         </ul>
                     </div>
                     <div class="col-12 col-lg-6 text-center">
-                        <img src="{{ asset('images/image_home.webp') }}" alt="Mécanicien à domicile" class="img-fluid rounded shadow-sm" >
+                        <img src="{{ asset('images/image_home.webp') }}" alt="Mécanicien à domicile intervenant sur un véhicule dans l'Hérault" class="img-fluid rounded shadow-sm" >
                     </div>
                 </div>
             </div>
@@ -57,13 +93,14 @@
         <section id="services" class="py-5 bg-light">
             <div class="container">
                 <div class="d-flex justify-content-between align-items-end flex-wrap gap-2 mb-4">
-                    <h2 class="h3 m-0">Nos services</h2>
-                    <span class="badge rounded-pill text-bg-primary">Déplacement inclus</span>
+                    <h2 class="h3 m-0">Nos services de mécanique automobile</h2>
+                    <span class="badge rounded-pill text-bg-primary">Déplacement inclus dans l'Hérault</span>
                 </div>
                 <div class="row g-3 g-md-4">
                     <div class="col-12 col-md-6 col-lg-4">
                         <div class="card h-100 shadow-sm">
                             <div class="card-body">
+                                <i class="bi bi-tools fs-2"></i>
                                 <h3 class="h5">Révision et entretien</h3>
                                 <p class="text-secondary">Vidange, filtres, niveaux, courroies. Carnet d’entretien respecté.</p>
                             </div>
@@ -72,6 +109,7 @@
                     <div class="col-12 col-md-6 col-lg-4">
                         <div class="card h-100 shadow-sm">
                             <div class="card-body">
+                                <i class="bi bi-disc fs-2"></i>
                                 <h3 class="h5">Freinage</h3>
                                 <p class="text-secondary">Remplacement plaquettes/disques, purge de frein, diagnostic ABS.</p>
                             </div>
@@ -80,6 +118,7 @@
                     <div class="col-12 col-md-6 col-lg-4">
                         <div class="card h-100 shadow-sm">
                             <div class="card-body">
+                                <i class="bi bi-lightning-charge fs-2"></i>
                                 <h3 class="h5">Batterie et démarrage</h3>
                                 <p class="text-secondary">Test batterie, remplacement, contrôle alternateur et démarreur.</p>
                             </div>
@@ -88,6 +127,7 @@
                     <div class="col-12 col-md-6 col-lg-4">
                         <div class="card h-100 shadow-sm">
                             <div class="card-body">
+                                <i class="bi bi-speedometer2 fs-2"></i>
                                 <h3 class="h5">Pneumatiques</h3>
                                 <p class="text-secondary">Montage, équilibrage, permutation saisonnière (sur jantes).</p>
                             </div>
@@ -96,6 +136,7 @@
                     <div class="col-12 col-md-6 col-lg-4">
                         <div class="card h-100 shadow-sm">
                             <div class="card-body">
+                                <i class="bi bi-cpu fs-2"></i>
                                 <h3 class="h5">Diagnostic</h3>
                                 <p class="text-secondary">Lecture OBD, recherche de pannes mécaniques et électriques.</p>
                             </div>
@@ -104,6 +145,7 @@
                     <div class="col-12 col-md-6 col-lg-4">
                         <div class="card h-100 shadow-sm">
                             <div class="card-body">
+                                <i class="bi bi-plus-circle fs-2"></i>
                                 <h3 class="h5">Autres</h3>
                                 <p class="text-secondary">Amortisseurs, échappement, éclairage, et plus sur demande.</p>
                             </div>
@@ -116,33 +158,36 @@
         <!-- Process -->
         <section id="process" class="py-5">
             <div class="container">
-                <h2 class="h3 mb-4">Comment ça marche ?</h2>
-                <div class="row g-3 g-md-4">
+                <h2 class="h3 mb-5 text-center">Fonctionnement de votre garage mobile</h2>
+                <div class="row g-4 justify-content-center">
                     <div class="col-12 col-md-4">
-                        <div class="card h-100 border-0">
-                            <div class="card-body">
-                                <span class="badge text-bg-secondary mb-2">1</span>
-                                <h3 class="h5">Demandez un devis</h3>
-                                <p class="text-secondary">Contactez-nous avec votre immatriculation et le service souhaité.</p>
+                        <div class="text-center">
+                            <div class="mb-3">
+                                <span class="badge text-bg-secondary">1</span>
                             </div>
+                            <i class="bi bi-chat-dots fs-1 text-primary mb-3 d-block"></i>
+                            <h3 class="h5">Demandez un devis</h3>
+                            <p class="text-secondary">Contactez-nous avec votre immatriculation et le service souhaité.</p>
                         </div>
                     </div>
                     <div class="col-12 col-md-4">
-                        <div class="card h-100 border-0">
-                            <div class="card-body">
-                                <span class="badge text-bg-secondary mb-2">2</span>
-                                <h3 class="h5">Nous venons à vous</h3>
-                                <p class="text-secondary">Intervention à domicile ou sur site au créneau qui vous arrange.</p>
+                        <div class="text-center">
+                            <div class="mb-3">
+                                <span class="badge text-bg-secondary">2</span>
                             </div>
+                            <i class="bi bi-truck fs-1 text-primary mb-3 d-block"></i>
+                            <h3 class="h5">Nous venons à vous</h3>
+                            <p class="text-secondary">Intervention à domicile ou sur site au créneau qui vous arrange.</p>
                         </div>
                     </div>
                     <div class="col-12 col-md-4">
-                        <div class="card h-100 border-0">
-                            <div class="card-body">
-                                <span class="badge text-bg-secondary mb-2">3</span>
-                                <h3 class="h5">Vous repartez serein</h3>
-                                <p class="text-secondary">Facture claire, conseils d’entretien, pièces garanties.</p>
+                        <div class="text-center">
+                            <div class="mb-3">
+                                <span class="badge text-bg-secondary">3</span>
                             </div>
+                            <i class="bi bi-check-circle fs-1 text-primary mb-3 d-block"></i>
+                            <h3 class="h5">Vous repartez serein</h3>
+                            <p class="text-secondary">Facture claire, conseils d’entretien, pièces garanties.</p>
                         </div>
                     </div>
                 </div>
@@ -198,7 +243,7 @@
         <!-- Testimonials -->
         <section id="testimonials" class="py-5">
             <div class="container">
-                <h2 class="h3 mb-4">Ils me font confiances.</h2>
+                <h2 class="h3 mb-4">Avis clients sur nos services auto</h2>
                 <div id="carouselTestimonials" class="carousel slide" data-bs-ride="carousel">
                     <div class="carousel-inner">
                         <div class="carousel-item active">
