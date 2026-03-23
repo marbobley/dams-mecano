@@ -6,6 +6,7 @@ services:
     ports:
       - "8081:80"
       - "8445:443"
+    restart: unless-stopped
     deploy:
       resources:
         limits:
