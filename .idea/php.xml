@@ -123,7 +123,6 @@
       <path value="$PROJECT_DIR$/vendor/egulias/email-validator" />
       <path value="$PROJECT_DIR$/bundles/VisitorBundle/vendor/composer" />
       <path value="$PROJECT_DIR$/entities-visitor-bundle/vendor/composer" />
-      <path value="$PROJECT_DIR$/vendor/marbobley/entities-visitor-bundle" />
       <path value="$PROJECT_DIR$/entities-visitor-bundle/vendor/symfony/polyfill-ctype" />
       <path value="$PROJECT_DIR$/entities-visitor-bundle/vendor/doctrine/lexer" />
       <path value="$PROJECT_DIR$/entities-visitor-bundle/vendor/symfony/deprecation-contracts" />
