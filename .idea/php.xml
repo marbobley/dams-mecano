@@ -182,7 +182,7 @@
       <path value="$PROJECT_DIR$/entities-visitor-bundle/vendor/symfony/finder" />
     </include_path>
   </component>
-  <component name="PhpProjectSharedConfiguration" php_language_level="8.2" />
+  <component name="PhpProjectSharedConfiguration" php_language_level="8.4" />
   <component name="PhpStan">
     <PhpStan_settings>
       <phpstan_by_interpreter asDefaultInterpreter="true" interpreter_id="7cd12bc4-0c32-46d3-9495-b03a67b61e86" timeout="60000" />

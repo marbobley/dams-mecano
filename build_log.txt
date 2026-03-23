@@ -1,0 +1,73 @@
+#0 building with "default" instance using docker driver
+
+#1 [internal] load build definition from Dockerfile
+#1 transferring dockerfile: 1.71kB done
+#1 DONE 0.0s
+
+#2 [internal] load metadata for docker.io/library/composer:2
+#2 DONE 1.1s
+
+#3 [internal] load metadata for docker.io/dunglas/frankenphp:1-php8.4-alpine
+#3 DONE 1.1s
+
+#4 [internal] load .dockerignore
+#4 transferring context: 270B done
+#4 DONE 0.0s
+
+#5 [internal] load build context
+#5 DONE 0.0s
+
+#6 FROM docker.io/library/composer:2@sha256:743aebe48ca67097c36819040633ea77e44a561eca135e4fc84c002e63a1ba07
+#6 resolve docker.io/library/composer:2@sha256:743aebe48ca67097c36819040633ea77e44a561eca135e4fc84c002e63a1ba07
+#6 ...
+
+#7 [stage-0 1/8] FROM docker.io/dunglas/frankenphp:1-php8.4-alpine@sha256:48657f4af2ab71fd674f03803c08067890d292da3f5b9fc45428a567fbda7c62
+#7 resolve docker.io/dunglas/frankenphp:1-php8.4-alpine@sha256:48657f4af2ab71fd674f03803c08067890d292da3f5b9fc45428a567fbda7c62 0.2s done
+#7 DONE 0.2s
+
+#6 FROM docker.io/library/composer:2@sha256:743aebe48ca67097c36819040633ea77e44a561eca135e4fc84c002e63a1ba07
+#6 resolve docker.io/library/composer:2@sha256:743aebe48ca67097c36819040633ea77e44a561eca135e4fc84c002e63a1ba07 0.2s done
+#6 DONE 0.2s
+
+#5 [internal] load build context
+#5 transferring context: 10.35kB 0.0s done
+#5 DONE 0.1s
+
+#8 [stage-0 4/8] WORKDIR /app
+#8 CACHED
+
+#9 [stage-0 5/8] COPY --chown=www-data:www-data composer.json composer.lock ./
+#9 CACHED
+
+#10 [stage-0 2/8] RUN install-php-extensions     intl     zip     opcache
+#10 CACHED
+
+#11 [stage-0 3/8] COPY --from=composer:2 /usr/bin/composer /usr/bin/composer
+#11 CACHED
+
+#12 [stage-0 6/8] RUN composer install --no-dev --optimize-autoloader --no-scripts --no-interaction
+#12 CACHED
+
+#13 [stage-0 7/8] COPY --chown=www-data:www-data . .
+#13 DONE 0.5s
+
+#14 [stage-0 8/8] RUN mkdir -p var/cache var/log /data/caddy /config/caddy &&     chown -R www-data:www-data var/ /data/caddy /config/caddy &&     chmod -R 775 var/ /data/caddy /config/caddy &&     sync &&     APP_SECRET=temporary_secret_for_warmup php bin/console cache:warmup
+#14 2.630 
+#14 2.646  // Warming up the cache for the prod environment with debug false              
+#14 2.646 
+#14 8.706  [OK] Cache for the "prod" environment (debug=false) was successfully warmed.   
+#14 8.707 
+#14 DONE 9.0s
+
+#15 exporting to image
+#15 exporting layers
+#15 exporting layers 1.1s done
+#15 exporting manifest sha256:48bea5847adb26ec9913d6ff80d690baac52468632d029aa56508b37ba24ad8c 0.1s done
+#15 exporting config sha256:59d85d9ef5866defb0a48c89a30c0d544ee0c496bb6112fb92fb5998eb7d3401 0.1s done
+#15 exporting attestation manifest sha256:af658de9b9569ad6047418ff9dae080a893064ac48c131cb776056c4d6e7a161 0.1s done
+#15 exporting manifest list sha256:0f4edbba30684e6f617cd18cf806e82351b6e8244c0bd27d4d166733b330c032
+#15 exporting manifest list sha256:0f4edbba30684e6f617cd18cf806e82351b6e8244c0bd27d4d166733b330c032 0.0s done
+#15 naming to docker.io/library/dams-mecano:latest done
+#15 unpacking to docker.io/library/dams-mecano:latest
+#15 unpacking to docker.io/library/dams-mecano:latest 0.6s done
+#15 DONE 2.1s
