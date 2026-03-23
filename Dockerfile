@@ -1,3 +1,9 @@
+FROM composer:latest AS builder
+WORKDIR /app
+COPY . .
+RUN composer install
+RUN composer dump-autoload --optimize
+
 # Utilisation de l'image FrankenPHP officielle avec PHP 8.4
 FROM dunglas/frankenphp:1-php8.4-alpine
 
@@ -11,7 +17,7 @@ RUN install-php-extensions \
 WORKDIR /app
 
 # Copie des fichiers du projet
-COPY . /app
+COPY  --from=builder /app /app
 
 # On s'assure que le dossier public est bien utilisé comme racine du serveur
 ENV SERVER_NAME=:80
