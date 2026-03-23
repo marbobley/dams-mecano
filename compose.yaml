@@ -6,3 +6,11 @@ services:
     ports:
       - "8081:80"
       - "8445:443"
+    deploy:
+      resources:
+        limits:
+          cpus: '0.25'
+          memory: 128M
+        reservations:
+          cpus: '0.125'
+          memory: 64
