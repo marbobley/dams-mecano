@@ -4,8 +4,6 @@ services:
     environment:
       - APP_ENV=dev
     ports:
-      - "8080:80"
-      - "8443:443"
-      - "8443:443/udp"
+      - "8081:80"
     volumes:
       - .:/app
