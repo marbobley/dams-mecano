@@ -2,7 +2,7 @@ services:
   app:
     build: .
     environment:
-      - APP_ENV=dev
+      - APP_ENV=prod
     ports:
       - "8081:80"
       - "8445:443"
