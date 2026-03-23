@@ -7,8 +7,6 @@ ENV APP_RUNTIME=Runtime\\FrankenPhp\\Runtime
 
 # Installation des extensions PHP nécessaires (basé sur votre composer.json)
 RUN install-php-extensions \
-    pdo_mysql \
-    gd \
     intl \
     zip \
     opcache
