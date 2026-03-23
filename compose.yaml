@@ -5,3 +5,4 @@ services:
       - APP_ENV=dev
     ports:
       - "8081:80"
+      - "8445:443"
