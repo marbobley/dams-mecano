@@ -1,0 +1,14 @@
+.git
+.idea
+.env.local
+.env.dev.local
+.env.test.local
+.env.test
+var/cache/*
+var/log/*
+vendor/
+node_modules/
+tests/
+docker-compose.yml
+docker-compose.override.yml
+.junie/
