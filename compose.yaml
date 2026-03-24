@@ -2,10 +2,11 @@ services:
   app:
     build: .
     environment:
-      - APP_ENV=prod
+      - APP_ENV=${APP_ENV}
+      - SERVER_NAME=${SERVER_NAME}
     ports:
-      - "8081:80"
-      - "8445:443"
+      - "${APP_PORT_HTTP}:80"
+      - "${APP_PORT_HTTPS}:443"
     restart: unless-stopped
     deploy:
       resources:
