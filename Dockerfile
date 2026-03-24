@@ -25,7 +25,7 @@ RUN set -xe; \
     chown -R www-data:www-data /app /data /config
 USER www-data
 # On s'assure que le dossier public est bien utilisé comme racine du serveur
-ENV SERVER_NAME=:80
+ENV SERVER_NAME=localhost
 ENV DOCUMENT_ROOT=/app/public
 
 # FrankenPHP utilise par défaut le serveur Caddy intégré
