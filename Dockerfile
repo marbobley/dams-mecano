@@ -1,8 +1,8 @@
 FROM composer:latest AS builder
 WORKDIR /app
 COPY . .
-RUN composer install
-RUN composer dump-autoload --optimize
+RUN composer install --no-dev --optimize-autoloader
+RUN php bin/console asset-map:compile
 
 # Utilisation de l'image FrankenPHP officielle avec PHP 8.4
 FROM dunglas/frankenphp:1-php8.4-alpine
@@ -18,7 +18,10 @@ WORKDIR /app
 
 # Copie des fichiers du projet
 COPY  --from=builder /app /app
-
+# S'assurer que les dossiers de cache/log sont accessibles
+RUN set -xe; \
+    mkdir -p var/cache var/log; \
+    chmod -R 777 var/
 # On s'assure que le dossier public est bien utilisé comme racine du serveur
 ENV SERVER_NAME=:80
 ENV DOCUMENT_ROOT=/app/public
