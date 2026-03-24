@@ -18,10 +18,12 @@ WORKDIR /app
 
 # Copie des fichiers du projet
 COPY  --from=builder /app /app
+USER root
 # S'assurer que les dossiers de cache/log sont accessibles
 RUN set -xe; \
     mkdir -p var/cache var/log; \
-    chmod -R 777 var/
+    chown -R www-data:www-data /app /data /config
+USER www-data
 # On s'assure que le dossier public est bien utilisé comme racine du serveur
 ENV SERVER_NAME=:80
 ENV DOCUMENT_ROOT=/app/public
